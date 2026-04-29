@@ -1,4 +1,4 @@
-# AI Photo Culling System
+# Cullr - an AI Photo Culling System
 
 An on-device AI tool for macOS that automatically selects the best photos from a batch in your Apple Photos library — no uploads, no cloud, no coding required to use.
 
