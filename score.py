@@ -5,6 +5,7 @@ from PIL import Image
 import subprocess
 import os
 import argparse
+import sys
 
 # ── Image loading ──────────────────────────────────────────────────────────────
 
@@ -133,13 +134,21 @@ def apply_picks(picks, album_name):
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="AI Photo Culling System")
-    parser.add_argument("--album", type=str, default="DSAIL Project",
-                        help="Name of the Photos.app album to cull")
-    parser.add_argument("--picks", type=int, default=1,
-                        help="Number of picks per bucket (default: 1)")
-    args = parser.parse_args()
+    parser = argparse.ArgumentParser(
+    description="AI Photo Culling System — selects the best photos from an Apple Photos album.",
+    epilog="Example: python score.py --album 'Summer Trip 2024' --picks 1\n"
+    )
+    
+    parser.add_argument("--album", type=str, required=True,
+        help="Name of the Photos.app album to cull (must match exactly as it appears in Photos.app, e.g. 'Summer Trip 2024')")
+    parser.add_argument("--picks", type=int, required=True,
+        help="Number of top photos to select per group (e.g. 1 selects the single best solo shot and best together shot, 2 selects the top 2 from each)")
 
+    if len(sys.argv) == 1:
+        parser.print_help()
+        sys.exit(1)
+
+    args = parser.parse_args()
     album_name = args.album
     top_n = args.picks
 
