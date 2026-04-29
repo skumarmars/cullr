@@ -55,7 +55,7 @@ xcode-select --install
 
 ### 2. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/cullr.git
+git clone https://github.com/skumarmars/cullr.git
 cd cullr
 ```
 
