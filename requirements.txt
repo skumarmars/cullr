@@ -1,0 +1,4 @@
+osxphotos==0.75.7
+opencv-contrib-python==4.13.0.92
+pillow==12.2.0
+numpy==2.4.4
