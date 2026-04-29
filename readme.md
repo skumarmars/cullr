@@ -55,8 +55,8 @@ xcode-select --install
 
 ### 2. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/photo-culler.git
-cd photo-culler
+git clone https://github.com/YOUR_USERNAME/cullr.git
+cd cullr
 ```
 
 ### 3. Create a virtual environment and install dependencies
